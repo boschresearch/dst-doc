@@ -134,27 +134,3 @@ The non-technical summary of the protocol can be found `here. <https://drive.goo
 There is also a whitepaper existing regarding `Generic State Channel Networks <https://eprint.iacr.org/2018/320.pdf>`_. 
 This contains the first full specification of generic state channel networks
 that support an arbitrary number of intermediaries and allow users to run complex smart contract off-chain.
-
-Overview of Perun Smart Contracts
----------------------------------
-dst-go software (in current version), uses the following three smart contracts defined
-by the Perun project to do off chain transactions.
-The contracts are available in the legacy directory in the repository mentioned below.
-Perun smart contracts on github : https://github.com/PerunEthereum/Perun
-
-Basic Channel Contract (MSContract.sol)
-```````````````````````````````````````
-This is the contract to set up a basic state channel in which two parties agree (offline) on an internal contract (e.g., a virtual payment channel VPC) and execute this contract offline.
-
-Virtual Payment Channel (VPC.sol)
-`````````````````````````````````
-The virtual payment channel is a contract, which distributes funds between two users depending on states, which are signed by them. This contract can be run in the basic channel since the VPC can be executed even without the interaction of both users. It is sufficient to have a signed message from them. This allows execution even if one party aborts.
-
-Signature Library (LibSignature.sol)
-````````````````````````````````````
-This library allows efficient verification of ECDSA signatures. Both MSContract and VPC use this library internally.
-
-Releases
---------
-
-Current version of dst-go implements basic ledger channel and the complete walkthrough using the Perun smart contracts (legacy version).

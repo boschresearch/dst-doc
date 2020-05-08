@@ -10,9 +10,4 @@ Welcome to the documentation of Direct State Transfer (DST) !
    :maxdepth: 1
 
    introduction
-   getting_started
-   working_with
-   developer_guide
-   developer_reference
-   FAQ
    roadmap
